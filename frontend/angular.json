@@ -1,0 +1,22 @@
+{
+  "projects": {
+    "webauthn-frontend": {
+      "architect": {
+        "build": {
+          "options": {
+            "securityContext": {
+              "sanitize": false
+            }
+          }
+        },
+        "serve": {
+          "options": {
+            "headers": {
+              "Content-Security-Policy": "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; connect-src 'self' ws: wss: http://localhost:3000"
+            }
+          }
+        }
+      }
+    }
+  }
+}
