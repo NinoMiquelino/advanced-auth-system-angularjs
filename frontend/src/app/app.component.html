@@ -1,0 +1,14 @@
+<nav class="navbar">
+  <div class="nav-brand">WebAuthn Demo</div>
+  <div class="nav-links">
+    <a routerLink="/login" *ngIf="!authService.isLoggedIn()">Login</a>
+    <a routerLink="/register" *ngIf="!authService.isLoggedIn()">Register</a>
+    <a routerLink="/profile" *ngIf="authService.isLoggedIn()">Profile</a>
+    <a routerLink="/webauthn-register" *ngIf="authService.isLoggedIn()">Add WebAuthn</a>
+    <button *ngIf="authService.isLoggedIn()" (click)="authService.logout()">Logout</button>
+  </div>
+</nav>
+
+<main>
+  <router-outlet></router-outlet>
+</main>
